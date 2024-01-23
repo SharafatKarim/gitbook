@@ -1,7 +1,13 @@
 # Table of contents
 
-* [Sharafat Karim](README.md)
+* [✨ Sharafat Karim](README.md)
 
-## Social
+## 📖 Docs
 
-* [About](social/about.md)
+* [🥛 Podman](docs/podman.md)
+* [🔠 My SQL](docs/my-sql.md)
+
+## 💜 Social
+
+* [ℹ About](social/about.md)
+* [📩 Contact](social/contact.md)

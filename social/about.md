@@ -2,10 +2,13 @@
 description: Some hyperlinks to my blogs and other stuff!
 ---
 
-# About
+# ℹ About
 
 ## Links
 
-{% embed url="https://github.com/SharafatKarim/" %}
+{% @github-files/github-code-block url="https://github.com/SharafatKarim/" %}
+
+Explore more about me from here!
 
 {% embed url="https://sharafat.pages.dev/about/" %}
+
