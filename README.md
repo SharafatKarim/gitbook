@@ -4,7 +4,11 @@ description: Welcome to my Git Book. A collection of curated notes and reference
 
 # ✨ Sharafat Karim
 
-## Docs Collection
+Visit my **blog** for more documentations collections,
+
+[https://sharafat.pages.dev/](https://sharafat.pages.dev/)
+
+## GitBook Docs
 
 {% content-ref url="docs/podman.md" %}
 [podman.md](docs/podman.md)
