@@ -1,4 +1,4 @@
-# Welcome!
+# Welcome
 
 ## What is DSA?
 

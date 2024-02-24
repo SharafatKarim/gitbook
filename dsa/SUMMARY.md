@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Data Structure and Algorithms](README.md)
-* [Welcome!](<README (1).md>)
+* [Welcome!](<Welcome.md>)
 
 ## 🌏 Structures
 
