@@ -1,21 +1,14 @@
-# Welcome!
+---
+description: Some of my collections and notes
+---
 
-## Welcome to MyAPI
+# Data Structure and Algorithms
 
-Welcome to MyAPI! Here you'll find all the documentation you need to get up and running with the MyAPI API.
+#### What is DSA?
 
-## Want to jump right in?
+DSA stands for Data Structure and Algorithms. It's a fundamental concept in computer science that focuses on organizing and storing data efficiently, and using algorithms to manage, manipulate, and perform operations on that data.
 
-Feeling like an eager beaver? Jump in to the quick start docs and get making your first request:
+* **Data Structures** are ways of organizing data so it can be used effectively. Examples include arrays, linked lists, stacks, queues, trees, and graphs.
+* **Algorithms** are step-by-step procedures or formulas for solving a problem. Common algorithm types include sorting, searching, optimization, and dynamic programming.
 
-{% content-ref url="quick-start.md" %}
-[quick-start.md](quick-start.md)
-{% endcontent-ref %}
-
-## Want to deep dive?
-
-Dive a little deeper and start exploring our API reference to get an idea of everything that's possible with the API:
-
-{% content-ref url="reference/api-reference/" %}
-[api-reference](reference/api-reference/)
-{% endcontent-ref %}
+Understanding DSA is crucial for developing efficient and optimized software solutions.
