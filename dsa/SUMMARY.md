@@ -5,4 +5,4 @@
 
 ## 🌏 Structures
 
-* [Array](structures/array.md)
+* [Intro](structures/intro.md)
