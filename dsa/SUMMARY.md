@@ -18,3 +18,4 @@
 ## 🌏 Structures
 
 * [Intro](structures/intro.md)
+* [Stack](structures/stack.md)
