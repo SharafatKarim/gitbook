@@ -19,3 +19,5 @@
 
 * [Intro](structures/intro.md)
 * [Stack](structures/stack.md)
+* [Linked List](structures/linked-list.md)
+* [Graph](structures/graph.md)
