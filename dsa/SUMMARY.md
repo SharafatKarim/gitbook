@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Data Structure and Algorithms](README.md)
-* [Welcome!](<Welcome.md>)
-* [STL](<STL.md>)
+* [Welcome!](Welcome.md)
+* [STL](STL.md)
 
 ## 📚 Math
 
@@ -18,6 +18,8 @@
 ## 🌏 Structures
 
 * [Intro](structures/intro.md)
+* [Preliminaries (basics)](structures/preliminaries-basics.md)
+* [String Processing](structures/string-processing.md)
 * [Stack](structures/stack.md)
 * [Linked List](structures/linked-list.md)
 * [Graph](structures/graph.md)
