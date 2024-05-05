@@ -97,4 +97,3 @@ int main()
 }
 ```
 
-We will be using this code for the next few sections, I guess.
