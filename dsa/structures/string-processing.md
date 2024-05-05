@@ -51,6 +51,14 @@ int main()
 }
 ```
 
+As an alternative, replace can be also done with erase and insert functions.
+
+```cpp
+    // str.replace(index, pattern.length(), placeholder);
+    str.erase(index, pattern.length());
+    str.insert(index, placeholder);
+```
+
 ## 3.3 Pattern Matching
 
 Pattern matching is the process of checking whether a given sequence of characters (pattern) is present in a given string or not. The simplest way to do this is to check each substring of the string with the pattern. If the substring matches the pattern, then return the index of the substring in the string. Otherwise, return -1.
