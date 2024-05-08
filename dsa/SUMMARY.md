@@ -23,4 +23,4 @@
 * [Stack](structures/stack.md)
 * [Linked List](structures/linked-list.md)
 * [Graph](structures/graph/README.md)
-  * [Warshell Algorithm](structures/graph/warshell-algorithm.md)
+  * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)

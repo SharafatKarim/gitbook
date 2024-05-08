@@ -1,4 +1,18 @@
-# Warshell Algorithm
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# 🔸 Warshall's Algorithm
 
 ## Warshall's Algorithm
 
