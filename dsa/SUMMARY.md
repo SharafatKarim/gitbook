@@ -22,4 +22,5 @@
 * [String Processing](structures/string-processing.md)
 * [Stack](structures/stack.md)
 * [Linked List](structures/linked-list.md)
-* [Graph](structures/graph.md)
+* [Graph](structures/graph/README.md)
+  * [Warshell Algorithm](structures/graph/warshell-algorithm.md)

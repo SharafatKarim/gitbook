@@ -4,17 +4,13 @@
 
 Reverse Polish Notation (RPN) is a mathematical notation where every operator follows all of its operands. For instance, to add three and four, one would write "3 4 +" rather than "3 + 4". If there are multiple operations, the operator is given immediately after its second operand; so the expression written "3 − 4 + 5" would be written "3 4 − 5 +" first subtract 4 from 3, then add 5 to that.
 
-Sample 1:
-Input
-> 3
-> (a+(b*c))
-> ((a+b)*(z+x))
-> ((a+t)*((b+(a+c))^(c+d)))
+Sample 1: Input
+
+> 3 (a+(b_c)) ((a+b)_(z+x)) ((a+t)\*((b+(a+c))^(c+d)))
 
 Output
-> abc*+
-> ab+zx+*
-> at+bac++cd+^*
+
+> abc\*+ ab+zx+\* at+bac++cd+^\*
 
 ```cpp
 #include <bits/stdc++.h>

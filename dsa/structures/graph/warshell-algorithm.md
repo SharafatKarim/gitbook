@@ -1,8 +1,25 @@
-# Graph Theory
+# Warshell Algorithm
 
 ## Warshall's Algorithm
 
-Warshall's Algorithm is used to find the transitive closure of a graph. The transitive closure of a graph is a matrix that shows whether there is a path from vertex i to vertex j. The algorithm is based on the idea that if there is a path from vertex i to vertex j, and there is a path from vertex j to vertex k, then there is a path from vertex i to vertex k.
+To visualize this algorithm use this following site, you can check each steps of warshell algorithm from here,&#x20;
+
+{% embed url="https://sharafat.is-a.dev/GraphCraft/" %}
+
+here's a test case, just use this input and click on **analyze data**.
+
+```
+0 0 0 1
+1 0 1 1
+1 0 0 1
+0 0 1 0
+```
+
+> Open source project, source code is available on GitHub.
+
+***
+
+&#x20;Warshall's Algorithm is used to find the transitive closure of a graph. The transitive closure of a graph is a matrix that shows whether there is a path from vertex i to vertex j. The algorithm is based on the idea that if there is a path from vertex i to vertex j, and there is a path from vertex j to vertex k, then there is a path from vertex i to vertex k.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -46,4 +63,20 @@ int main() {
 
   return 0;
 }
-``` 
+```
+
+Here's a simple test case for this code,
+
+```
+4
+0 0 0 1
+1 0 1 1
+1 0 0 1
+0 0 1 0
+```
+
+{% hint style="info" %}
+Above code can also work to find the path matrix. Follow the comments of the code.
+{% endhint %}
+
+***
