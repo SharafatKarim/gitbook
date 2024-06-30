@@ -9,5 +9,5 @@
 
 ## 💜 Social
 
-* [ℹ About](social/about.md)
+* [ℹ️ About](social/about.md)
 * [📩 Contact](social/contact.md)
