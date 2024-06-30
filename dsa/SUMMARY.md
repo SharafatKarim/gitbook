@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Data Structure and Algorithms](README.md)
-* [Welcome!](Welcome.md)
+* [🌸 Welcome!](Welcome.md)
 * [STL](STL.md)
 
 ## 📚 Math
@@ -20,7 +20,9 @@
 * [Intro](structures/intro.md)
 * [Preliminaries (basics)](structures/preliminaries-basics.md)
 * [String Processing](structures/string-processing.md)
-* [Stack](structures/stack.md)
+* [Stack & Queue](structures/stack/README.md)
+  * [Stack Basics](structures/stack/stack-basics.md)
+  * [Postfix notation](structures/stack/postfix-notation.md)
 * [Linked List](structures/linked-list.md)
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
