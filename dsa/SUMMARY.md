@@ -7,8 +7,8 @@
 ## 📚 Math
 
 * [Intro](math/intro.md)
-* [Number Theory](math/number-theory.md)
 * [Prime Numbers](math/prime-numbers.md)
+* [Number Theory](math/number-theory.md)
 * [GCD and LCM](math/gcd-and-lcm.md)
 * [Modular Arithmetic](math/modular-arithmetic.md)
 * [Combinatorics](math/combinatorics.md)
