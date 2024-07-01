@@ -20,6 +20,7 @@
 * [Intro](structures/intro.md)
 * [Preliminaries (basics)](structures/preliminaries-basics.md)
 * [String Processing](structures/string-processing.md)
+* [Array and matrix](structures/array-and-matrix.md)
 * [Stack & Queue](structures/stack/README.md)
   * [Stack Basics](structures/stack/stack-basics.md)
   * [Postfix notation](structures/stack/postfix-notation.md)
