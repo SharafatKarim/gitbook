@@ -2,7 +2,8 @@
 
 * [Data Structure and Algorithms](README.md)
 * [🌸 Welcome!](Welcome.md)
-* [STL](STL.md)
+* [Standard Template Library](STL.md)
+* [Prerequisites](prerequisites.md)
 
 ## 📚 Math
 
