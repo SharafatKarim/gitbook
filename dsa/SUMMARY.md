@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Data Structure and Algorithms](README.md)
+* [🧮 Data Structure and Algorithms](README.md)
 * [🌸 Welcome!](Welcome.md)
 * [Standard Template Library](STL.md)
 * [Prerequisites](prerequisites.md)
