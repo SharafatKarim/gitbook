@@ -2,7 +2,7 @@
 description: Some of my collections and notes
 ---
 
-# Data Structure and Algorithms
+# 🧮 Data Structure and Algorithms
 
 ## What is DSA?
 

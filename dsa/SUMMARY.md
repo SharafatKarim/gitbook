@@ -35,6 +35,6 @@
 * [Tree](structures/tree/README.md)
   * [Binary Tree](structures/tree/binary-tree.md)
   * [Binary Search Tree](structures/tree/binary-search-tree.md)
-  * [Heap!](structures/tree/heap.md)
+  * [Heap and Heap Sort](structures/tree/heap-and-heap-sort.md)
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)

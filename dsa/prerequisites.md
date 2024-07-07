@@ -1,4 +1,4 @@
-# Prerequisites
+# 🍽️ Prerequisites
 
 There are some things, which may need for future understandings. Let me list some of 'em here.
 
