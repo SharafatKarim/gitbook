@@ -2,8 +2,8 @@
 
 * [🧮 Data Structure and Algorithms](README.md)
 * [🌸 Welcome!](Welcome.md)
-* [Standard Template Library](STL.md)
-* [Prerequisites](prerequisites.md)
+* [📚 Standard Template Library](STL.md)
+* [🍽️ Prerequisites](prerequisites.md)
 
 ## 📚 Math
 
@@ -22,6 +22,7 @@
 * [Preliminaries (basics)](structures/preliminaries-basics.md)
 * [String Processing](structures/string-processing.md)
 * [Array and matrix](structures/array-and-matrix.md)
+* [Linked List](structures/linked-list.md)
 * [Stack & Queue](structures/stack/README.md)
   * [Stack Basics](structures/stack/stack-basics.md)
   * [Postfix notation](structures/stack/postfix-notation.md)
@@ -31,6 +32,7 @@
   * [Queue](structures/stack/queue.md)
   * [Priority Queue (one way list)](structures/stack/priority-queue-one-way-list.md)
   * [Priority Queue (2D matrix)](structures/stack/priority-queue-2d-matrix.md)
-* [Linked List](structures/linked-list.md)
+* [Tree](structures/tree/README.md)
+  * [Binary Tree](structures/tree/binary-tree.md)
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
