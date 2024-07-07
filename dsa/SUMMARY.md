@@ -34,5 +34,7 @@
   * [Priority Queue (2D matrix)](structures/stack/priority-queue-2d-matrix.md)
 * [Tree](structures/tree/README.md)
   * [Binary Tree](structures/tree/binary-tree.md)
+  * [Binary Search Tree](structures/tree/binary-search-tree.md)
+  * [Heap!](structures/tree/heap.md)
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
