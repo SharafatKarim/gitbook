@@ -111,7 +111,7 @@ void delete_with_two_children(Node *&root, Node *&location, Node *&parent) {
 
 As we have seen in the 7.6 and 7.7, we will be needing address of the node that we want to delete. And here in this step we will work around this. We will use 7.4 to find the address of our node and parent and will try to determine either it has one child or two child!
 
-```
+```cpp
 void delete_node(Node *&root, int item) {
     Node *location, *parent;
     find(root, location, parent, item);
