@@ -39,3 +39,4 @@
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
   * [Linked Representation](structures/graph/linked-representation.md)
+  * [Traversing - BFS, DFS & More](structures/graph/traversing-bfs-dfs-and-more.md)

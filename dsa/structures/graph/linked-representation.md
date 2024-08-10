@@ -51,6 +51,8 @@ It's preety straightforward approach. A loop of course!
 {% hint style="info" %}
 If you are not sure, how to actually place this function, here's a quick peek!&#x20;
 
+> **Here, `printAll()` will help you to debug and print!**
+
 ```cpp
 #include <iostream>
 
@@ -89,6 +91,20 @@ public:
             temp = temp->next_link;
         }
         return NULL;
+    }
+    
+    void printAll() {
+        Node* temp = start;
+        while (temp != NULL) {
+            cout << temp->data << " -> ";
+            Node* temp2 = temp->adjacent;
+            while (temp2 != NULL) {
+                cout << temp2->destination->data << ", ";
+                temp2 = temp2->next_link;
+            }
+            temp = temp->next_link;
+            cout << endl;
+        }
     }
 
     //
@@ -497,4 +513,6 @@ int main() {
 }
 ```
 
-> Feel free to go through the commented lines, tweaking around!
+> Feel free to go through the commented lines, tweaking around!&#x20;
+>
+> **Here print function is for your debugging friend!**
