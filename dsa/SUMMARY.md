@@ -38,3 +38,4 @@
   * [Heap and Heap Sort](structures/tree/heap-and-heap-sort.md)
 * [Graph](structures/graph/README.md)
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
+  * [Linked Representation](structures/graph/linked-representation.md)
