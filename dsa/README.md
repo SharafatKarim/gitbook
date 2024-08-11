@@ -1,20 +1,27 @@
 ---
-description: Some of my collections and notes
+description: Welcome to my Git Book. A collection of curated notes and references!
 ---
 
-# 🧮 Data Structure and Algorithms
+# ✨ Sharafat Karim
 
-## What is DSA?
+Visit my **blog** for more documentations collections,
 
-DSA stands for Data Structure and Algorithms. It's a fundamental concept in computer science that focuses on organizing and storing data efficiently, and using algorithms to manage, manipulate, and perform operations on that data.
+[https://sharafat.pages.dev/](https://sharafat.pages.dev/)
 
-* **Data Structures** are ways of organizing data so it can be used effectively. Examples include arrays, linked lists, stacks, queues, trees, and graphs.
-* **Algorithms** are step-by-step procedures or formulas for solving a problem. Common algorithm types include sorting, searching, optimization, and dynamic programming.
+## GitBook Docs
 
-Understanding DSA is crucial for developing efficient and optimized software solutions.
+{% content-ref url="https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/2sKa7RW1baMw0wpN3NpG/" %}
+[Data Structure and Algorithms](https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/2sKa7RW1baMw0wpN3NpG/)
+{% endcontent-ref %}
 
-## How to use this site?
+{% content-ref url="https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/PBf3IN9jWsZkRqDgttA5/" %}
+[C Reference](https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/PBf3IN9jWsZkRqDgttA5/)
+{% endcontent-ref %}
 
-Look left, you will find a left sidebar (scrollable). Use that, for easier navigation. Currently, as of now, structure part is based on the book,
+{% content-ref url="docs/podman.md" %}
+[podman.md](docs/podman.md)
+{% endcontent-ref %}
 
-* **Data structures** by **Seymour Lipschutz**.
+{% content-ref url="docs/my-sql.md" %}
+[my-sql.md](docs/my-sql.md)
+{% endcontent-ref %}
