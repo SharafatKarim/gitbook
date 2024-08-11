@@ -18,4 +18,3 @@ Understanding DSA is crucial for developing efficient and optimized software sol
 Look left, you will find a left sidebar (scrollable). Use that, for easier navigation. Currently, as of now, structure part is based on the book,
 
 * **Data structures** by **Seymour Lipschutz**.
-
