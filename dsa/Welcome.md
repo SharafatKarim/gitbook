@@ -16,5 +16,3 @@ Well, it's upto you.
 {% endhint %}
 
 > Writing too much won't get me nowhere, so let's actually start without intro!
-
-2Bupdated!
