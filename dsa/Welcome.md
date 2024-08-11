@@ -6,6 +6,12 @@ description: >-
 
 # 🌸 Welcome!
 
+{% hint style="info" %}
+This welcome page is totally cloned from my friend [sr-tamim](https://sr-tamim.vercel.app/)'s gitbook page. Thanks a lot for letting me **steal your page** 😆. No hard feelings!
+
+* [https://sr-tamim.gitbook.io/algorithm/1.intro\_to\_algorithms](https://sr-tamim.gitbook.io/algorithm/1.intro\_to\_algorithms)&#x20;
+{% endhint %}
+
 ## Algorithm <a href="#algorithm" id="algorithm"></a>
 
 An algorithm is a set of well-defined steps or rules to solve a particular problem.
