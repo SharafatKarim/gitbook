@@ -29,6 +29,11 @@
   * [🔸 Warshall's Algorithm](structures/graph/warshalls-algorithm.md)
   * [Linked Representation](structures/graph/linked-representation.md)
   * [Traversing - BFS, DFS & More](structures/graph/traversing-bfs-dfs-and-more.md)
+* [Sorting & Searching](structures/sorting-and-searching/README.md)
+  * [Insertion Sort](structures/sorting-and-searching/insertion-sort.md)
+  * [Selection Sort](structures/sorting-and-searching/selection-sort.md)
+  * [Bubble Sort](structures/sorting-and-searching/bubble-sort.md)
+  * [Merge Sort](structures/sorting-and-searching/merge-sort.md)
 
 ## 📚 Math
 
