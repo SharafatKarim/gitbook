@@ -10,14 +10,14 @@
 
 ## Input-Output
 
-* [⚛ Data type](input-output/data-type.md)
+* [⚛️ Data type](input-output/data-type.md)
 * [🔧 Expression](input-output/expression.md)
-* [✍ Input](input-output/input.md)
+* [✍️ Input](input-output/input.md)
 * [🪟 Output](input-output/output.md)
 
 ## Beginner
 
-* [⚖ Condition](beginner/condition.md)
+* [⚖️ Condition](beginner/condition.md)
 * [🔁 Loop](beginner/loop.md)
 * [🎒 Array](beginner/array.md)
 * [📚 String](beginner/string.md)
@@ -39,4 +39,4 @@
 ## Advanced
 
 * [🎑 Memory allocation](advanced/memory-allocation.md)
-* [📽 Preprocessor](advanced/preprocessor.md)
+* [📽️ Preprocessor](advanced/preprocessor.md)
