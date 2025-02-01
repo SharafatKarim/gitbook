@@ -27,7 +27,7 @@ This is a cheat sheet of MySQL for easier references. MySQL is an open-source re
 
 To get started with MySQL, you can download it from [here](https://dev.mysql.com/downloads/mysql/) or, simply use [xampp](https://www.apachefriends.org/download.html), which uses `maria-db`, a drop in replacement of MySQL. To run MySQL, in linux environment or, docker/ podman container, I've a guide for you!
 
-- [Database setup with podman/ Docker containers](Database setup with podman/ Docker containers)
+- [Database setup with podman/ Docker containers](https://sharafat.pages.dev/database-containers/)
 
 ## User
 
@@ -40,19 +40,25 @@ mysql -u root -p
 ### Show Users
 
 ```sql
-SELECT User, Host FROM MYSQL.USER;
+SELECT 
+    User, 
+    Host 
+FROM 
+    MYSQL.USER;
 ```
 
 ### Create User
 
 ```sql
-CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
+CREATE USER 'someuser'@'localhost' 
+IDENTIFIED BY 'somepassword';
 ```
 
 ### Grant All Privileges On All Databases
 
 ```sql
-GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
+GRANT ALL PRIVILEGES ON * . * 
+TO 'someuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -65,7 +71,8 @@ SHOW GRANTS FOR 'someuser'@'localhost';
 ### Remove Grants
 
 ```sql
-REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'someuser'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION 
+FROM 'someuser'@'localhost';
 ```
 
 ### Delete User
@@ -203,8 +210,7 @@ USE cheatsheet;
 ## Create Table
 
 ```sql
-CREATE TABLE employee
-(
+CREATE TABLE employee (
     employee_id INT PRIMARY KEY,              -- Setting primary key(1st method)
     first_name VARCHAR(50),
     last_name VARCHAR(50),
@@ -213,8 +219,7 @@ CREATE TABLE employee
     salary REAL
 );
 
-CREATE TABLE department
-(
+CREATE TABLE department (
     dept_number INT,
     dept_name VARCHAR(50),
     dept_location VARCHAR(50),
@@ -247,31 +252,36 @@ ALTER TABLE employee_table RENAME TO employee;
 ## Renaming Column
 
 ```sql
-ALTER TABLE employee CHANGE COLUMN employee_id emp_id INT;
+ALTER TABLE employee 
+CHANGE COLUMN employee_id emp_id INT;
 ```
 
 ## Add Constraint to Column
 
 ```sql
-ALTER TABLE employee CHANGE COLUMN first_name first_name VARCHAR(50) NOT NULL;
+ALTER TABLE employee 
+CHANGE COLUMN first_name first_name VARCHAR(50) NOT NULL;
 ```
 
 ## Add Column
 
 ```sql
-ALTER TABLE employee ADD COLUMN salary REAL;
+ALTER TABLE employee 
+ADD COLUMN salary REAL;
 ```
 
 ## Drop Column
 
 ```sql
-ALTER TABLE employee DROP COLUMN salary;
+ALTER TABLE employee 
+DROP COLUMN salary;
 ```
 
 ## Modify the Datatype of column
 
 ```sql
-ALTER TABLE employee MODIFY COLUMN salary INT;
+ALTER TABLE employee 
+MODIFY COLUMN salary INT;
 ```
 
 ## Truncate Table
@@ -279,6 +289,8 @@ ALTER TABLE employee MODIFY COLUMN salary INT;
 ```sql
 TRUNCATE employee;
 ```
+
+> Trancute means to delete all the rows from the table but the table structure remains the same.
 
 ## Drop Table
 
@@ -297,33 +309,64 @@ DROP DATABASE cheatsheet;
 ## Insertion (Complete)
 
 ```sql
-INSERT INTO employee (employee_id, first_name, last_name, dept_number, age, salary) VALUES (1, "Anurag", "Peddi", 1, 20, 93425.63);
+INSERT INTO employee (
+    employee_id, 
+    first_name, 
+    last_name, 
+    dept_number, 
+    age, 
+    salary
+) VALUES (
+    1, 
+    "Anurag", 
+    "Peddi", 
+    1, 
+    20, 
+    93425.63
+);
 
-INSERT INTO employee VALUES (2, "Anuhya", "Peddi", 2, 20, 83425.63);
+INSERT INTO employee VALUES (
+    2, 
+    "Anuhya", 
+    "Peddi", 
+    2, 
+    20, 
+    83425.63
+);
 ```
 
 ## Insertion (Partial)
 
 ```sql
-INSERT INTO employee (employee_id, first_name) VALUES (3, "Vageesh");
+INSERT INTO employee (
+    employee_id, 
+    first_name
+) VALUES (
+    3, 
+    "Vageesh"
+);
 ```
 
 ## Updating all rows
 
 ```sql
-UPDATE employee SET salary = 1.1 * salary;
+UPDATE employee 
+SET salary = 1.1 * salary;
 ```
 
 ## Updating a specified row
 
 ```sql
-UPDATE employee SET salary = 1.2 * salary WHERE employee_id = 1;
+UPDATE employee 
+SET salary = 1.2 * salary 
+WHERE employee_id = 1;
 ```
 
 ## Delete a specified row
 
 ```sql
-DELETE FROM employee WHERE employee_id = 2;
+DELETE FROM employee 
+WHERE employee_id = 2;
 ```
 
 ## Delete all rows
@@ -337,19 +380,30 @@ DELETE FROM employee;
 ## Display Table
 
 ```sql
-SELECT * FROM employee;
+SELECT * 
+FROM employee;
 ```
 
 ## Select only specified columns
 
 ```sql
-SELECT employee_id, first_name FROM employee;
+SELECT 
+    employee_id, 
+    first_name 
+FROM 
+    employee;
 ```
 
 ## Select only few rows
 
 ```sql
-SELECT employee_id, first_name FROM employee WHERE age > 25;
+SELECT 
+    employee_id, 
+    first_name 
+FROM 
+    employee 
+WHERE 
+    age > 25;
 ```
 
 ## Where Clause
@@ -357,71 +411,97 @@ SELECT employee_id, first_name FROM employee WHERE age > 25;
 ### Greater than(>)
 
 ```sql
-SELECT * FROM employee WHERE salary > 3100;
+SELECT * 
+FROM employee 
+WHERE salary > 3100;
 ```
 
 ### Greater than equal to(>=)
 
 ```sql
-SELECT * FROM employee WHERE salary >= 3100;
+SELECT * 
+FROM employee 
+WHERE salary >= 3100;
 ```
 
 ### Less than(<)
 
 ```sql
-SELECT * FROM employee WHERE salary < 4500;
+SELECT * 
+FROM employee 
+WHERE salary < 4500;
 ```
 
 ### Less than equal to(<=)
 
 ```sql
-SELECT * FROM employee WHERE salary <= 4350;
+SELECT * 
+FROM employee 
+WHERE salary <= 4350;
 ```
 
 ### Range
 
 ```sql
-SELECT * FROM employee WHERE salary > 3000 AND salary < 4000;
+SELECT * 
+FROM employee 
+WHERE salary > 3000 
+AND salary < 4000;
 ```
 
 ### BETWEEN and AND
 
 ```sql
-SELECT * FROM employee WHERE salary BETWEEN 3000 AND 4000;
+SELECT * 
+FROM employee 
+WHERE salary BETWEEN 3000 AND 4000;
 ```
 
 ### OR
 
 ```sql
-SELECT * FROM employee WHERE salary = 3000 OR salary = 4000;
+SELECT * 
+FROM employee 
+WHERE salary = 3000 
+OR salary = 4000;
 ```
 
 ### Null
 
 ```sql
-SELECT * FROM employee WHERE salary IS NULL;
+SELECT * 
+FROM employee 
+WHERE salary IS NULL;
 ```
 
 ### Not null
 
 ```sql
-SELECT * FROM employee WHERE salary IS NOT NULL;
+SELECT * 
+FROM employee 
+WHERE salary IS NOT NULL;
 ```
 
 ### ORDER BY Clause
 
 ```sql
-SELECT * FROM employee ORDER BY salary DESC;
+SELECT * 
+FROM employee 
+ORDER BY salary DESC;
 ```
 
 #### Like Operator
 
 ```sql
-SELECT * FROM employee WHERE name LIKE '%Jo%';          -- Similar to *Jo* in regrex
+SELECT * 
+FROM employee 
+WHERE name LIKE '%Jo%';          -- Similar to *Jo* in regrex
 ```
 
 ```sql
-SELECT * FROM employee WHERE name LIKE 'Jo_';           -- Similar to Jo. in regrex
+SELECT * 
+FROM employee 
+WHERE name LIKE 'Jo_';           -- Similar to Jo. in regrex
 ```
 
 # Views
@@ -429,25 +509,34 @@ SELECT * FROM employee WHERE name LIKE 'Jo_';           -- Similar to Jo. in reg
 ## Create a view
 
 ```sql
-CREATE VIEW personal_info AS SELECT first_name, last_name, age FROM employees;
+CREATE VIEW personal_info AS 
+SELECT 
+    first_name, 
+    last_name, 
+    age 
+FROM 
+    employees;
 ```
 
 ## Displaying view
 
 ```sql
-SELECT * FROM personal_info;
+SELECT * 
+FROM personal_info;
 ```
 
 ## Updating in view
 
 ```sql
-UPDATE personal_info SET salary = 1.1 * salary;
+UPDATE personal_info 
+SET salary = 1.1 * salary;
 ```
 
 ## Deleting record from view
 
 ```sql
-DELETE FROM personal_info WHERE age < 40;
+DELETE FROM personal_info 
+WHERE age < 40;
 ```
 
 ## Droping a view
@@ -461,43 +550,93 @@ DROP VIEW personal_info;
 ## Inner join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e INNER JOIN project AS p ON e.eid = p.eid;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+INNER JOIN project AS p 
+ON e.eid = p.eid;
 
 -- or
 
-SELECT e.fname, p.pname FROM employees AS e JOIN project AS p ON e.eid = p.eid;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+JOIN project AS p 
+ON e.eid = p.eid;
 ```
 
 ## Full outer join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+LEFT OUTER JOIN project AS p 
+ON e.eid = p.eid
 UNION
-SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+RIGHT OUTER JOIN project AS p 
+ON e.eid = p.eid;
 ```
 
 ## Left outer join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+LEFT OUTER JOIN project AS p 
+ON e.eid = p.eid;
 ```
 
 ## Right outer join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+RIGHT OUTER JOIN project AS p 
+ON e.eid = p.eid;
 ```
 
 ## Left outer join - inner join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid WHERE p.pname IS NULL;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+LEFT OUTER JOIN project AS p 
+ON e.eid = p.eid 
+WHERE p.pname IS NULL;
 ```
 
 ## Right outer join - inner join
 
 ```sql
-SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid WHERE e.fname IS NULL;
+SELECT 
+    e.fname, 
+    p.pname 
+FROM 
+    employees AS e 
+RIGHT OUTER JOIN project AS p 
+ON e.eid = p.eid 
+WHERE e.fname IS NULL;
 ```
 
 # Aggregation
@@ -505,43 +644,72 @@ SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.e
 ## Sum function
 
 ```sql
-SELECT SUM(population) FROM city GROUP BY population;
+SELECT 
+    SUM(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 ## Average function
 
 ```sql
-SELECT AVG(population) FROM city GROUP BY population;
+SELECT 
+    AVG(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 ## Count function
 
 ```sql
-SELECT district, COUNT(district) FROM city GROUP BY district;
+SELECT 
+    district, 
+    COUNT(district) 
+FROM 
+    city 
+GROUP BY district;
 ```
 
 ## Maximum function
 
 ```sql
-SELECT MAX(population) FROM city GROUP BY population;
+SELECT 
+    MAX(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 ## Minimum function
 
 ```sql
-SELECT MIN(population) FROM city GROUP BY population;
+SELECT 
+    MIN(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 ## Standard deviation function
 
 ```sql
-SELECT STDDEV(population) FROM city GROUP BY population;
+SELECT 
+    STDDEV(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 ## Group concat function
 
 ```sql
-SELECT GROUP_CONCAT(population) FROM city GROUP BY population;
+SELECT 
+    GROUP_CONCAT(population) 
+FROM 
+    city 
+GROUP BY population;
 ```
 
 > Only COUNT function considers NULL values
@@ -681,26 +849,30 @@ CREATE TABLE emp_dup SELECT * FROM employee;
 ## Creating New User
 
 ```sql
-CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'username'@'localhost' 
+IDENTIFIED BY 'password';
 ```
 
 the hostname part is set to `localhost`, so the user will be able to connect to the MySQL server only from the localhost.  
 To grant access from another host, change the hostname part with the remote machine IP.  
 
 ```sql
-CREATE USER 'username'@'172.8.10.5' IDENTIFIED BY 'user_password';
+CREATE USER 'username'@'172.8.10.5' 
+IDENTIFIED BY 'user_password';
 ```
 
 To create a user that can connect from any host, '%' is used in the hostname part:
 
 ```sql
-CREATE USER 'username'@'%' IDENTIFIED BY 'user_password';
+CREATE USER 'username'@'%' 
+IDENTIFIED BY 'user_password';
 ```
 
 ## Grant All Permissions
 
 ```sql
-GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
+GRANT ALL PRIVILEGES ON * . * 
+TO 'username'@'localhost';
 ```
 
 Asterisks(\*) refers to the database and table names respectively.  
@@ -717,7 +889,9 @@ All the changes won't be in effect unless this query is fired.
 ## Specific User Permissions
 
 ```sql
-GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
+GRANT type_of_permission 
+ON database_name.table_name 
+TO 'username'@'localhost';
 ```
 
 `type_of_permission` may have one of these value:
@@ -735,7 +909,9 @@ Multiple permissions are given with commas.
 ## Revoking permissions
 
 ```sql
-REVOKE type_of_permission ON database_name.table_name FROM 'username'@'localhost';
+REVOKE type_of_permission 
+ON database_name.table_name 
+FROM 'username'@'localhost';
 ```
 
 ## Show User's Current Permissions
@@ -754,7 +930,9 @@ DROP USER 'username'@'localhost';
 
 ```sql
 USE mysql;
-UPDATE user SET authentication_string=PASSWORD("<new2-password>") WHERE User='<user>';
+UPDATE user 
+SET authentication_string=PASSWORD("<new2-password>") 
+WHERE User='<user>';
 FLUSH PRIVILEGES;
 ```
 
@@ -782,7 +960,8 @@ mysql -u root
 Set new password for root
 
 ```sql
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'MY_NEW_PASSWORD';
+ALTER USER 'root'@'localhost' 
+IDENTIFIED BY 'MY_NEW_PASSWORD';
 FLUSH PRIVILEGES;
 ```
 
@@ -812,7 +991,9 @@ SELECT @name;
 
 ```sql
 SET @n = 21;
-SELECT REPEAT("* ", @n := @n - 1) FROM information_schema.tables WHERE @n > 0;
+SELECT REPEAT("* ", @n := @n - 1) 
+FROM information_schema.tables 
+WHERE @n > 0;
 ```
 
 # Miscellaneous
