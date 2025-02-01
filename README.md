@@ -14,10 +14,6 @@ Visit my **blog** for more documentations collections,
 [Data Structure and Algorithms](https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/2sKa7RW1baMw0wpN3NpG/)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/PBf3IN9jWsZkRqDgttA5/" %}
-[C Reference](https://app.gitbook.com/o/m0GVaUNbE4QrcEGOSipd/s/PBf3IN9jWsZkRqDgttA5/)
-{% endcontent-ref %}
-
 {% content-ref url="docs/podman.md" %}
 [podman.md](docs/podman.md)
 {% endcontent-ref %}

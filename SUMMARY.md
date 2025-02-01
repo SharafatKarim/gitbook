@@ -4,8 +4,8 @@
 
 ## 📖 Docs
 
-* [⛲ Podman](docs/podman.md)
-* [🔠 My SQL](docs/my-sql.md)
+* [Podman](docs/podman.md)
+* [My SQL](docs/my-sql.md)
 
 ## 💜 Social
 
