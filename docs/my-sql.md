@@ -21,64 +21,68 @@ layout:
 
 # My SQL
 
-## Intro
+This is a cheat sheet of MySQL for easier references. MySQL is an open-source relational database management system. It is a central component of the LAMP open-source web application software stack. MySQL is used by many database-driven web applications, including Drupal, Joomla, phpBB, and WordPress.
 
-This is a cheat sheet of MySQL for easier references.
+## Installation
+
+To get started with MySQL, you can download it from [here](https://dev.mysql.com/downloads/mysql/) or, simply use [xampp](https://www.apachefriends.org/download.html), which uses `maria-db`, a drop in replacement of MySQL. To run MySQL, in linux environment or, docker/ podman container, I've a guide for you!
+
+- [Database setup with podman/ Docker containers](Database setup with podman/ Docker containers)
 
 ## User
 
 ### Login
 
-```
+```bash
 mysql -u root -p
 ```
 
 ### Show Users
 
-```
+```sql
 SELECT User, Host FROM MYSQL.USER;
 ```
 
 ### Create User
 
-```
+```sql
 CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
 ```
 
 ### Grant All Privileges On All Databases
 
-```
+```sql
 GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 ### Show Grants
 
-```
+```sql
 SHOW GRANTS FOR 'someuser'@'localhost';
 ```
 
 ### Remove Grants
 
-```
+```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'someuser'@'localhost';
 ```
 
 ### Delete User
 
-```
+```sql
 DROP USER 'someuser'@'localhost';
 ```
 
 ### Exit
 
-```
+```sql
 EXIT;
 ```
 
 # Database
 
-### General Commands
+## General Commands
 
 To run SQL files
 
@@ -88,7 +92,7 @@ SOURCE <filename>.sql;
 
 ## Data Types
 
-#### Integers
+### Integers
 
 ```sql
 INT
@@ -110,43 +114,43 @@ MEDIUMINT
 BIGINT
 ```
 
-#### Float
+### Float
 
 ```sql
 FLOAT(M,D)
 ```
 
-#### Double
+### Double
 
 ```sql
 DOUBLE(M,D)
 ```
 
-#### Decimal
+### Decimal
 
 ```sql
 DECIMAL(M,D)
 ```
 
-#### Date
+### Date
 
 ```sql
 DATE -- Format - (YYYY-MM-DD)
 ```
 
-#### Date Time
+### Date Time
 
 ```sql
 DATETIME -- Format - (YYYY-MM-DD HH:MM:SS)
 ```
 
-#### Time
+### Time
 
 ```sql
 TIME -- Format - (HH:MM:SS)
 ```
 
-#### String
+### String
 
 ```sql
 CHAR(M)
@@ -176,27 +180,27 @@ comment */
 -- Single Line Comment
 ```
 
-## Data Definition Language (DDL)
+# Data Definition Language (DDL)
 
-#### Create Database
+## Create Database
 
 ```sql
 CREATE DATABASE cheatsheet;
 ```
 
-#### Use Database
-
-```sql
-USE cheatsheet;
-```
-
-#### Show Databases
+## Show Databases
 
 ```sql
 SHOW DATABASES;
 ```
 
-#### Create Table
+## Use Database
+
+```sql
+USE cheatsheet;
+```
+
+## Create Table
 
 ```sql
 CREATE TABLE employee
@@ -219,13 +223,13 @@ CREATE TABLE department
 );
 ```
 
-#### Show Tables
+## Show Tables
 
 ```sql
 SHOW TABLES;
 ```
 
-#### Describe Table
+## Describe Table
 
 ```sql
 DESCRIBE employee;
@@ -233,64 +237,64 @@ DESC employee;
 SHOW COLUMNS IN employee;
 ```
 
-#### Rename Table
+## Rename Table
 
 ```sql
 RENAME TABLE employee TO employee_table;
 ALTER TABLE employee_table RENAME TO employee;
 ```
 
-#### Renaming Column
+## Renaming Column
 
 ```sql
 ALTER TABLE employee CHANGE COLUMN employee_id emp_id INT;
 ```
 
-#### Add Constraint to Column
+## Add Constraint to Column
 
 ```sql
 ALTER TABLE employee CHANGE COLUMN first_name first_name VARCHAR(50) NOT NULL;
 ```
 
-#### Add Column
+## Add Column
 
 ```sql
 ALTER TABLE employee ADD COLUMN salary REAL;
 ```
 
-#### Drop Column
+## Drop Column
 
 ```sql
 ALTER TABLE employee DROP COLUMN salary;
 ```
 
-#### Modify the Datatype of column
+## Modify the Datatype of column
 
 ```sql
 ALTER TABLE employee MODIFY COLUMN salary INT;
 ```
 
-#### Truncate Table
+## Truncate Table
 
 ```sql
 TRUNCATE employee;
 ```
 
-#### Drop Table
+## Drop Table
 
 ```sql
 DROP TABLE department;
 ```
 
-#### Drop Database
+## Drop Database
 
 ```sql
 DROP DATABASE cheatsheet;
 ```
 
-## Data Manipulation Language (DML)
+# Data Manipulation Language (DML)
 
-#### Insertion (Complete)
+## Insertion (Complete)
 
 ```sql
 INSERT INTO employee (employee_id, first_name, last_name, dept_number, age, salary) VALUES (1, "Anurag", "Peddi", 1, 20, 93425.63);
@@ -298,101 +302,89 @@ INSERT INTO employee (employee_id, first_name, last_name, dept_number, age, sala
 INSERT INTO employee VALUES (2, "Anuhya", "Peddi", 2, 20, 83425.63);
 ```
 
-#### Insertion (Partial)
+## Insertion (Partial)
 
 ```sql
 INSERT INTO employee (employee_id, first_name) VALUES (3, "Vageesh");
 ```
 
-#### Updating all rows
+## Updating all rows
 
 ```sql
 UPDATE employee SET salary = 1.1 * salary;
 ```
 
-#### Updating a specified row
+## Updating a specified row
 
 ```sql
 UPDATE employee SET salary = 1.2 * salary WHERE employee_id = 1;
 ```
 
-#### Delete a specified row
+## Delete a specified row
 
 ```sql
 DELETE FROM employee WHERE employee_id = 2;
 ```
 
-#### Delete all rows
+## Delete all rows
 
 ```sql
 DELETE FROM employee;
 ```
 
-#### Enabling foreign key checks
+# Data Query Language (DQL)
 
-```sql
-SET foreign_key_checks = 1;
-```
-
-#### Disabling foreign key checks
-
-```sql
-SET foreign_key_checks = 0;
-```
-
-## Data Query Language (DQL)
-
-#### Display Table
+## Display Table
 
 ```sql
 SELECT * FROM employee;
 ```
 
-#### Select only specified columns
+## Select only specified columns
 
 ```sql
 SELECT employee_id, first_name FROM employee;
 ```
 
-#### Select only few rows
+## Select only few rows
 
 ```sql
 SELECT employee_id, first_name FROM employee WHERE age > 25;
 ```
 
-### Where Clause
+## Where Clause
 
-#### Greater than(>)
+### Greater than(>)
 
 ```sql
 SELECT * FROM employee WHERE salary > 3100;
 ```
 
-#### Greater than equal to(>=)
+### Greater than equal to(>=)
 
 ```sql
 SELECT * FROM employee WHERE salary >= 3100;
 ```
 
-#### Less than(<)
+### Less than(<)
 
 ```sql
 SELECT * FROM employee WHERE salary < 4500;
 ```
 
-#### Less than equal to(<=)
+### Less than equal to(<=)
 
 ```sql
 SELECT * FROM employee WHERE salary <= 4350;
 ```
 
-#### Range
+### Range
 
 ```sql
 SELECT * FROM employee WHERE salary > 3000 AND salary < 4000;
 ```
 
-#### BETWEEN and AND
+### BETWEEN and AND
 
 ```sql
 SELECT * FROM employee WHERE salary BETWEEN 3000 AND 4000;
@@ -404,13 +396,13 @@ SELECT * FROM employee WHERE salary BETWEEN 3000 AND 4000;
 SELECT * FROM employee WHERE salary = 3000 OR salary = 4000;
 ```
 
-#### Null
+### Null
 
 ```sql
 SELECT * FROM employee WHERE salary IS NULL;
 ```
 
-#### Not null
+### Not null
 
 ```sql
 SELECT * FROM employee WHERE salary IS NOT NULL;
@@ -432,41 +424,41 @@ SELECT * FROM employee WHERE name LIKE '%Jo%';          -- Similar to *Jo* in re
 SELECT * FROM employee WHERE name LIKE 'Jo_';           -- Similar to Jo. in regrex
 ```
 
-## Views
+# Views
 
-#### Create a view
+## Create a view
 
 ```sql
 CREATE VIEW personal_info AS SELECT first_name, last_name, age FROM employees;
 ```
 
-#### Displaying view
+## Displaying view
 
 ```sql
 SELECT * FROM personal_info;
 ```
 
-#### Updating in view
+## Updating in view
 
 ```sql
 UPDATE personal_info SET salary = 1.1 * salary;
 ```
 
-#### Deleting record from view
+## Deleting record from view
 
 ```sql
 DELETE FROM personal_info WHERE age < 40;
 ```
 
-#### Droping a view
+## Droping a view
 
 ```sql
 DROP VIEW personal_info;
 ```
 
-## Joins
+# Joins
 
-#### Inner join
+## Inner join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e INNER JOIN project AS p ON e.eid = p.eid;
@@ -476,7 +468,7 @@ SELECT e.fname, p.pname FROM employees AS e INNER JOIN project AS p ON e.eid = p
 SELECT e.fname, p.pname FROM employees AS e JOIN project AS p ON e.eid = p.eid;
 ```
 
-#### Full outer join
+## Full outer join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid
@@ -484,69 +476,69 @@ UNION
 SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-#### Left outer join
+## Left outer join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-#### Right outer join
+## Right outer join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-#### Left outer join - inner join
+## Left outer join - inner join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid WHERE p.pname IS NULL;
 ```
 
-#### Right outer join - inner join
+## Right outer join - inner join
 
 ```sql
 SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid WHERE e.fname IS NULL;
 ```
 
-## Aggregation
+# Aggregation
 
-#### Sum function
+## Sum function
 
 ```sql
 SELECT SUM(population) FROM city GROUP BY population;
 ```
 
-#### Average function
+## Average function
 
 ```sql
 SELECT AVG(population) FROM city GROUP BY population;
 ```
 
-#### Count function
+## Count function
 
 ```sql
 SELECT district, COUNT(district) FROM city GROUP BY district;
 ```
 
-#### Maximum function
+## Maximum function
 
 ```sql
 SELECT MAX(population) FROM city GROUP BY population;
 ```
 
-#### Minimum function
+## Minimum function
 
 ```sql
 SELECT MIN(population) FROM city GROUP BY population;
 ```
 
-#### Standard deviation function
+## Standard deviation function
 
 ```sql
 SELECT STDDEV(population) FROM city GROUP BY population;
 ```
 
-#### Group concat function
+## Group concat function
 
 ```sql
 SELECT GROUP_CONCAT(population) FROM city GROUP BY population;
@@ -554,36 +546,36 @@ SELECT GROUP_CONCAT(population) FROM city GROUP BY population;
 
 > Only COUNT function considers NULL values
 
-## Procedure
+# Procedure
 
-#### Creating procedure
+## Creating procedure
 
 ```sql
 CREATE PROCEDURE display_dbs()
 SHOW DATABASES;
 ```
 
-#### Calling procedure
+## Calling procedure
 
 ```sql
 CALL display_dbs();
 ```
 
-#### Drop procedure
+### Drop procedure
 
 ```sql
 DROP PROCEDURE display_dbs;
 ```
 
-## Transaction
+# Transaction
 
-#### Begin transaction
+## Begin transaction
 
 ```sql
 START TRANSACTION;
 ```
 
-#### Create savepoint
+## Create savepoint
 
 ```sql
 SAVEPOINT sv_pt;
@@ -593,27 +585,27 @@ SAVEPOINT sv_pt;
 DELETE FROM city;       -- changing data in table
 ```
 
-#### Rollback
+## Rollback
 
 ```sql
 ROLLBACK TO sv_pt;
 ```
 
-#### Releasing savepoint
+## Releasing savepoint
 
 ```sql
 RELEASE SAVEPOINT sv_pt;
 ```
 
-#### Commiting changes
+## Commiting changes
 
 ```sql
 COMMIT;
 ```
 
-## Constraints
+# Constraints
 
-#### Not Null
+## Not Null
 
 ```sql
 ALTER TABLE Employee
@@ -622,7 +614,7 @@ CHANGE
     Age INT NOT NULL;
 ```
 
-#### Unique
+## Unique
 
 ```sql
 ALTER TABLE Employee
@@ -634,7 +626,7 @@ ALTER TABLE Employee -- drop the constraint
 DROP CONSTRAINT u_q;
 ```
 
-#### Primary Key
+## Primary Key
 
 ```sql
 ALTER TABLE Employee
@@ -646,7 +638,7 @@ ALTER TABLE Employee -- drop the constraint
 DROP CONSTRAINT p_k;
 ```
 
-#### Check
+## Check
 
 ```sql
 ALTER TABLE Employee
@@ -658,7 +650,7 @@ ALTER TABLE Employee -- drop the constraint
 DROP CHECK Age;
 ```
 
-#### Default
+## Default
 
 ```sql
 ALTER TABLE Employee
@@ -672,21 +664,21 @@ ALTER Age DROP DEFAULT;
 
 ## Cloning
 
-#### Duplicate a Table Schema
+## Duplicate a Table Schema
 
 ```sql
 CREATE TABLE emp_dup LIKE employee;
 ```
 
-#### Duplicate a Table
+## Duplicate a Table
 
 ```sql
 CREATE TABLE emp_dup SELECT * FROM employee;
 ```
 
-## Access Controls
+# Access Controls
 
-#### Creating New User
+## Creating New User
 
 ```sql
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
@@ -705,7 +697,7 @@ To create a user that can connect from any host, '%' is used in the hostname par
 CREATE USER 'username'@'%' IDENTIFIED BY 'user_password';
 ```
 
-#### Grant All Permissions
+## Grant All Permissions
 
 ```sql
 GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
@@ -714,7 +706,7 @@ GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
 Asterisks(\*) refers to the database and table names respectively.  
 By using asterisks we can give access of all the databases **or** tables to the user.
 
-#### Flush Privileges
+## Flush Privileges
 
 ```sql
 FLUSH PRIVILEGES
@@ -722,7 +714,7 @@ FLUSH PRIVILEGES
 
 All the changes won't be in effect unless this query is fired.
 
-#### Specific User Permissions
+## Specific User Permissions
 
 ```sql
 GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
@@ -730,35 +722,35 @@ GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
 
 `type_of_permission` may have one of these value:
 
-* **ALL PRIVILEGES** - Allows user full access to a designated database (or if no database is selected, global access across the system).
-* **CREATE** - allows them to create new tables or databases.
-* **DROP** - allows them to them to delete tables or databases.
-* **DELETE** - allows them to delete rows from tables.
-* **INSERT** - allows them to insert rows into tables.
-* **SELECT** - allows them to use the `SELECT` command to read through databases.
-* **UPDATE** - allow them to update table rows.
-* **GRANT OPTION** - allows them to grant or remove other users’ privileges.  
+- **ALL PRIVILEGES** - Allows user full access to a designated database (or if no database is selected, global access across the system).
+- **CREATE** - allows them to create new tables or databases.
+- **DROP** - allows them to them to delete tables or databases.
+- **DELETE** - allows them to delete rows from tables.
+- **INSERT** - allows them to insert rows into tables.
+- **SELECT** - allows them to use the `SELECT` command to read through databases.
+- **UPDATE** - allow them to update table rows.
+- **GRANT OPTION** - allows them to grant or remove other users’ privileges.  
 Multiple permissions are given with commas.
 
-#### Revoking permissions
+## Revoking permissions
 
 ```sql
 REVOKE type_of_permission ON database_name.table_name FROM 'username'@'localhost';
 ```
 
-#### Show User's Current Permissions
+## Show User's Current Permissions
 
 ```sql
 SHOW GRANTS FOR 'username'@'localhost';
 ```
 
-#### Delete a User
+## Delete a User
 
 ```sql
 DROP USER 'username'@'localhost';
 ```
 
-#### Set new password to a user
+## Set new password to a user
 
 ```sql
 USE mysql;
@@ -801,75 +793,87 @@ mysqladmin -u root -p shutdown
 sudo systemctl start mysql
 ```
 
-## Programming
+# Programming
 
-#### Declare variables
+## Declare variables
 
 ```sql
 SET @num = 10;
 SET @name = 'Anurag';
 ```
 
-#### Print them
+## Print them
 
 ```sql
 SELECT @name;
 ```
 
-#### For loop
+## For loop
 
 ```sql
 SET @n = 21;
 SELECT REPEAT("* ", @n := @n - 1) FROM information_schema.tables WHERE @n > 0;
 ```
 
-## Miscellaneous
+# Miscellaneous
 
-#### Round
+## Enabling foreign key checks
+
+```sql
+SET foreign_key_checks = 1;
+```
+
+## Disabling foreign key checks
+
+```sql
+SET foreign_key_checks = 0;
+```
+
+## Round
 
 ```sql
 SELECT ROUND(3.141596, 3);
 ```
 
-#### Repeated concatenation
+## Repeated concatenation
 
 ```sql
 SELECT REPEAT("* ", 20);
 ```
 
-#### Random float
+## Random float
 
 ```sql
 SELECT RAND();
 ```
 
-#### Typecast to Int
+## Typecast to Int
 
 ```sql
 SELECT CAST(23.01245 AS SIGNED);
 ```
 
-#### Concatenation
+## Concatenation
 
 ```sql
 SELECT CONCAT("Mahesh", " ", "Chandra", " ", "Duddu", "!");
 ```
 
-#### Extract Month
+## Extract Month
 
 ```sql
 SELECT MONTH("1998-12-30");
 ```
 
-#### Extract Year
+## Extract Year
 
 ```sql
 SELECT YEAR("1998-12-30");
 ```
 
-## Also thanks to
+# Also thanks to
 
-* [https://github.com/GunaPalanivel/The-MySQL-Code-Sheet](https://github.com/GunaPalanivel/The-MySQL-Code-Sheet)&#x20;
-* [https://github.com/AbdGhazall/MySQL-Cheat-Sheet](https://github.com/AbdGhazall/MySQL-Cheat-Sheet)&#x20;
-* [https://github.com/Cheatsheet-lang/MySQL-cheatsheet](https://github.com/Cheatsheet-lang/MySQL-cheatsheet)&#x20;
-* [https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3](https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3)
+- [https://github.com/Cheatsheet-lang/MySQL-cheatsheet](https://github.com/Cheatsheet-lang/MySQL-cheatsheet)&#x20;
+- [https://github.com/GunaPalanivel/The-MySQL-Code-Sheet](https://github.com/GunaPalanivel/The-MySQL-Code-Sheet)&#x20;
+- [https://github.com/AbdGhazall/MySQL-Cheat-Sheet](https://github.com/AbdGhazall/MySQL-Cheat-Sheet)&#x20;
+- [https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3](https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3)
