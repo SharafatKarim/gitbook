@@ -36,7 +36,7 @@ mysql -u root -p
 ### Show Users
 
 ```
-SELECT User, Host FROM mysql.user;
+SELECT User, Host FROM MYSQL.USER;
 ```
 
 ### Create User
@@ -73,668 +73,658 @@ DROP USER 'someuser'@'localhost';
 ### Exit
 
 ```
-exit;
+EXIT;
 ```
 
-## Database
+# Database
 
-### Data Types
+### General Commands
 
+To run SQL files
 
-
-**Integers**
-
-
-
+```sql
+SOURCE <filename>.sql;
 ```
+
+## Data Types
+
+#### Integers
+
+```sql
 INT
 ```
 
-```
+```sql
 TINYINT
 ```
 
-```
+```sql
 SMALLINT
 ```
 
-```
+```sql
 MEDIUMINT
 ```
 
-```
+```sql
 BIGINT
 ```
 
-**Float**
+#### Float
 
-
-
-```
+```sql
 FLOAT(M,D)
 ```
 
-**Double**
+#### Double
 
-
-
-```
+```sql
 DOUBLE(M,D)
 ```
 
-**Decimal**
+#### Decimal
 
-
-
-```
+```sql
 DECIMAL(M,D)
 ```
 
-**Date**
+#### Date
 
-
-
-```
+```sql
 DATE -- Format - (YYYY-MM-DD)
 ```
 
-**Date Time**
+#### Date Time
 
-
-
-```
+```sql
 DATETIME -- Format - (YYYY-MM-DD HH:MM:SS)
 ```
 
-**Time**
+#### Time
 
-
-
-```
+```sql
 TIME -- Format - (HH:MM:SS)
 ```
 
-**String**
+#### String
 
-
-
-```
+```sql
 CHAR(M)
 ```
 
-```
+```sql
 VARCHAR(M)
 ```
 
-```
+```sql
 BLOB or TEXT
 ```
 
-### Comments
+## Comments
 
-```
+```sql
 /* Multi
 line
 comment */
 ```
 
-```
+```sql
 # Single Line Comment
 ```
 
-```
+```sql
 -- Single Line Comment
 ```
 
-### Data Definition Language (DDL)
+## Data Definition Language (DDL)
 
-**Create Database**
+#### Create Database
 
-```
-create database cheatsheet;
-```
-
-**Use Database**
-
-```
-use cheatsheet;
+```sql
+CREATE DATABASE cheatsheet;
 ```
 
-**Show Databases**
+#### Use Database
 
-```
-show databases;
+```sql
+USE cheatsheet;
 ```
 
-**Create Table**
+#### Show Databases
 
+```sql
+SHOW DATABASES;
 ```
-create table employee
+
+#### Create Table
+
+```sql
+CREATE TABLE employee
 (
-    employee_id int primary key,              -- Setting primary key(1st method)
-    first_name varchar(50),
-    last_name varchar(50),
-    dept_number int,
-    age int,
-    salary real
+    employee_id INT PRIMARY KEY,              -- Setting primary key(1st method)
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    dept_number INT,
+    age INT,
+    salary REAL
 );
 
-create table department
+CREATE TABLE department
 (
-    dept_number int,
-    dept_name varchar(50),
-    dept_location varchar(50),
-    emp_id int,
-    primary key(dept_number)                -- Setting primary key(2nd method)
+    dept_number INT,
+    dept_name VARCHAR(50),
+    dept_location VARCHAR(50),
+    emp_id INT,
+    PRIMARY KEY(dept_number)                -- Setting primary key(2nd method)
 );
 ```
 
-**Show Tables**
+#### Show Tables
 
+```sql
+SHOW TABLES;
 ```
-show tables;
-```
 
-**Describe Table**
+#### Describe Table
 
-```
-describe employee;
-desc employee;
-show columns in employee;
+```sql
+DESCRIBE employee;
+DESC employee;
+SHOW COLUMNS IN employee;
 ```
 
-**Rename Table**
+#### Rename Table
 
+```sql
+RENAME TABLE employee TO employee_table;
+ALTER TABLE employee_table RENAME TO employee;
 ```
-rename table employee to employee_table;
-alter table employee_table rename to employee;
-```
 
-**Renaming Column**
+#### Renaming Column
 
+```sql
+ALTER TABLE employee CHANGE COLUMN employee_id emp_id INT;
 ```
-alter table employee change column employee_id emp_id int;
-```
 
-**Add Constraint to Column**
+#### Add Constraint to Column
 
-```
-alter table employee change column first_name first_name varchar(50) not null;
+```sql
+ALTER TABLE employee CHANGE COLUMN first_name first_name VARCHAR(50) NOT NULL;
 ```
 
-**Add Column**
+#### Add Column
 
+```sql
+ALTER TABLE employee ADD COLUMN salary REAL;
 ```
-alter table employee add column salary real;
-```
 
-**Drop Column**
+#### Drop Column
 
-```
-alter table employee drop column salary;
+```sql
+ALTER TABLE employee DROP COLUMN salary;
 ```
 
-**Modify the Datatype of column**
+#### Modify the Datatype of column
 
+```sql
+ALTER TABLE employee MODIFY COLUMN salary INT;
 ```
-alter table employee modify column salary int;
-```
 
-**Truncate Table**
+#### Truncate Table
 
+```sql
+TRUNCATE employee;
 ```
-truncate employee;
-```
 
-**Drop Table**
+#### Drop Table
 
-```
-drop table department;
+```sql
+DROP TABLE department;
 ```
 
-**Drop Database**
+#### Drop Database
 
+```sql
+DROP DATABASE cheatsheet;
 ```
-drop database cheatsheet;
-```
 
-### Data Manipulation Language (DML)
+## Data Manipulation Language (DML)
 
-**Insertion (Complete)**
+#### Insertion (Complete)
 
-```
-insert into employee (employee_id, first_name, last_name, dept_number, age, salary) values (1, "Anurag", "Peddi", 1, 20, 93425.63);
+```sql
+INSERT INTO employee (employee_id, first_name, last_name, dept_number, age, salary) VALUES (1, "Anurag", "Peddi", 1, 20, 93425.63);
 
-insert into employee values (2, "Anuhya", "Peddi", 2, 20, 83425.63);
+INSERT INTO employee VALUES (2, "Anuhya", "Peddi", 2, 20, 83425.63);
 ```
 
-**Insertion (Partial)**
+#### Insertion (Partial)
 
+```sql
+INSERT INTO employee (employee_id, first_name) VALUES (3, "Vageesh");
 ```
-insert into employee (employee_id, first_name) values (3, "Vageesh");
-```
 
-**Updating all rows**
+#### Updating all rows
 
+```sql
+UPDATE employee SET salary = 1.1 * salary;
 ```
-update employee set salary = 1.1 * salary;
-```
 
-**Updating a specified row**
+#### Updating a specified row
 
-```
-update employee set salary = 1.2 * salary where employee_id = 1;
+```sql
+UPDATE employee SET salary = 1.2 * salary WHERE employee_id = 1;
 ```
 
-**Delete a specified row**
+#### Delete a specified row
 
+```sql
+DELETE FROM employee WHERE employee_id = 2;
 ```
-delete from employee where employee_id = 2;
-```
 
-**Delete all rows**
+#### Delete all rows
 
-```
-delete from employee;
+```sql
+DELETE FROM employee;
 ```
 
-**Enabling foreign key checks**
+#### Enabling foreign key checks
 
+```sql
+SET foreign_key_checks = 1;
 ```
-set foreign_key_checks = 1;
-```
 
-**Disabling foreign key checks**
+#### Disabling foreign key checks
 
+```sql
+SET foreign_key_checks = 0;
 ```
-set foreign_key_checks = 0;
-```
 
-### Data Query Language (DQL)
+## Data Query Language (DQL)
 
-**Display Table**
+#### Display Table
 
-```
-select * from employee;
+```sql
+SELECT * FROM employee;
 ```
 
-**Select only specified columns**
+#### Select only specified columns
 
+```sql
+SELECT employee_id, first_name FROM employee;
 ```
-select employee_id, first_name from employee;
-```
 
-**Select only few rows**
+#### Select only few rows
 
-```
-select employee_id, first_name from employee where age > 25;
+```sql
+SELECT employee_id, first_name FROM employee WHERE age > 25;
 ```
 
-#### Where Clause
+### Where Clause
 
-**Greater than(>)**
+#### Greater than(>)
 
+```sql
+SELECT * FROM employee WHERE salary > 3100;
 ```
-select * from employee where salary > 3100;
-```
 
-**Greater than equal to(>=)**
+#### Greater than equal to(>=)
 
+```sql
+SELECT * FROM employee WHERE salary >= 3100;
 ```
-select * from employee where salary >= 3100;
-```
 
-**Less than(<)**
+#### Less than(<)
 
-```
-select * from employee where salary < 4500;
+```sql
+SELECT * FROM employee WHERE salary < 4500;
 ```
 
-**Less than equal to(<=)**
+#### Less than equal to(<=)
 
+```sql
+SELECT * FROM employee WHERE salary <= 4350;
 ```
-select * from employee where salary <= 4350;
-```
 
-**Range**
+#### Range
 
-```
-select * from employee where salary > 3000 and salary < 4000;
+```sql
+SELECT * FROM employee WHERE salary > 3000 AND salary < 4000;
 ```
 
-**BETWEEN and AND**
+#### BETWEEN and AND
 
+```sql
+SELECT * FROM employee WHERE salary BETWEEN 3000 AND 4000;
 ```
-select * from employee where salary between 3000 and 4000;
-```
 
-#### OR
+### OR
 
+```sql
+SELECT * FROM employee WHERE salary = 3000 OR salary = 4000;
 ```
-select * from employee where salary = 3000 or salary = 4000;
-```
 
-**Null**
+#### Null
 
-```
-select * from employee where salary is NULL;
+```sql
+SELECT * FROM employee WHERE salary IS NULL;
 ```
 
-**Not null**
+#### Not null
 
+```sql
+SELECT * FROM employee WHERE salary IS NOT NULL;
 ```
-select * from employee where salary is NOT NULL;
-```
 
-#### ORDER BY Clause
+### ORDER BY Clause
 
-```
-select * from employee ORDER BY salary DESC;
+```sql
+SELECT * FROM employee ORDER BY salary DESC;
 ```
 
-**Like Operator**
+#### Like Operator
 
+```sql
+SELECT * FROM employee WHERE name LIKE '%Jo%';          -- Similar to *Jo* in regrex
 ```
-select * from employee where name like '%Jo%';          -- Similar to *Jo* in regrex
-```
 
+```sql
+SELECT * FROM employee WHERE name LIKE 'Jo_';           -- Similar to Jo. in regrex
 ```
-select * from employee where name like 'Jo_';           -- Similar to Jo. in regrex
-```
 
-### Views
+## Views
 
-**Create a view**
+#### Create a view
 
-```
-create view personal_info as select first_name, last_name, age from employees;
+```sql
+CREATE VIEW personal_info AS SELECT first_name, last_name, age FROM employees;
 ```
 
-**Displaying view**
+#### Displaying view
 
+```sql
+SELECT * FROM personal_info;
 ```
-select * from personal_info;
-```
 
-**Updating in view**
+#### Updating in view
 
-```
-update personal_info set salary = 1.1 * salary;
+```sql
+UPDATE personal_info SET salary = 1.1 * salary;
 ```
 
-**Deleting record from view**
+#### Deleting record from view
 
+```sql
+DELETE FROM personal_info WHERE age < 40;
 ```
-delete from personal_info where age < 40;
-```
 
-**Droping a view**
+#### Droping a view
 
+```sql
+DROP VIEW personal_info;
 ```
-drop view personal_info;
-```
 
-### Joins
+## Joins
 
-**Inner join**
+#### Inner join
 
-```
-select e.fname, p.pname from employees as e inner join project as p on e.eid = p.eid;
+```sql
+SELECT e.fname, p.pname FROM employees AS e INNER JOIN project AS p ON e.eid = p.eid;
 
 -- or
 
-select e.fname, p.pname from employees as e join project as p on e.eid = p.eid;
+SELECT e.fname, p.pname FROM employees AS e JOIN project AS p ON e.eid = p.eid;
 ```
 
-**Full outer join**
+#### Full outer join
 
-```
-select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid
-union
-select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
-```
-
-**Left outer join**
-
-```
-select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid;
+```sql
+SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid
+UNION
+SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-**Right outer join**
+#### Left outer join
 
-```
-select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
-```
-
-**Left outer join - inner join**
-
-```
-select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid where p.pname is null;
+```sql
+SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-**Right outer join - inner join**
+#### Right outer join
 
-```
-select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid where e.fname is null;
-```
-
-### Aggregation
-
-**Sum function**
-
-```
-select sum(population) from city group by population;
+```sql
+SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid;
 ```
 
-**Average function**
+#### Left outer join - inner join
 
-```
-select avg(population) from city group by population;
-```
-
-**Count function**
-
-```
-select district, count(district) from city group by district;
+```sql
+SELECT e.fname, p.pname FROM employees AS e LEFT OUTER JOIN project AS p ON e.eid = p.eid WHERE p.pname IS NULL;
 ```
 
-**Maximum function**
+#### Right outer join - inner join
 
-```
-select max(population) from city group by population;
-```
-
-**Minimum function**
-
-```
-select min(population) from city group by population;
+```sql
+SELECT e.fname, p.pname FROM employees AS e RIGHT OUTER JOIN project AS p ON e.eid = p.eid WHERE e.fname IS NULL;
 ```
 
-**Standard deviation function**
+## Aggregation
 
-```
-select stddev(population) from city group by population;
+#### Sum function
+
+```sql
+SELECT SUM(population) FROM city GROUP BY population;
 ```
 
-**Group concat function**
+#### Average function
 
+```sql
+SELECT AVG(population) FROM city GROUP BY population;
 ```
-select group_concat(population) from city group by population;
+
+#### Count function
+
+```sql
+SELECT district, COUNT(district) FROM city GROUP BY district;
+```
+
+#### Maximum function
+
+```sql
+SELECT MAX(population) FROM city GROUP BY population;
+```
+
+#### Minimum function
+
+```sql
+SELECT MIN(population) FROM city GROUP BY population;
+```
+
+#### Standard deviation function
+
+```sql
+SELECT STDDEV(population) FROM city GROUP BY population;
+```
+
+#### Group concat function
+
+```sql
+SELECT GROUP_CONCAT(population) FROM city GROUP BY population;
 ```
 
 > Only COUNT function considers NULL values
 
-### Procedure
+## Procedure
 
-**Creating procedure**
+#### Creating procedure
 
-```
-create procedure display_dbs()
-show databases;
-```
-
-**Calling procedure**
-
-```
-call display_dbs();
+```sql
+CREATE PROCEDURE display_dbs()
+SHOW DATABASES;
 ```
 
-**Drop procedure**
+#### Calling procedure
 
-```
-drop procedure display_dbs;
-```
-
-### Transaction
-
-**Begin transaction**
-
-```
-start transaction;
+```sql
+CALL display_dbs();
 ```
 
-**Create savepoint**
+#### Drop procedure
 
-```
-savepoint sv_pt;
-```
-
-```
-delete from city;       -- changing data in table
+```sql
+DROP PROCEDURE display_dbs;
 ```
 
-**Rollback**
+## Transaction
 
-```
-rollback to sv_pt;
-```
+#### Begin transaction
 
-**Releasing savepoint**
-
-```
-release savepoint sv_pt;
+```sql
+START TRANSACTION;
 ```
 
-**Commiting changes**
+#### Create savepoint
 
+```sql
+SAVEPOINT sv_pt;
 ```
-commit;
+
+```sql
+DELETE FROM city;       -- changing data in table
 ```
 
-### Constraints
+#### Rollback
 
-**Not Null**
-
+```sql
+ROLLBACK TO sv_pt;
 ```
-alter table Employee
-change
+
+#### Releasing savepoint
+
+```sql
+RELEASE SAVEPOINT sv_pt;
+```
+
+#### Commiting changes
+
+```sql
+COMMIT;
+```
+
+## Constraints
+
+#### Not Null
+
+```sql
+ALTER TABLE Employee
+CHANGE
     Age
-    Age int NOT NULL;
+    Age INT NOT NULL;
 ```
 
-**Unique**
+#### Unique
 
-```
-alter table Employee
-add constraint u_q unique(ID);
-```
-
-```
-alter table Employee -- drop the constraint
-drop constraint u_q;
+```sql
+ALTER TABLE Employee
+ADD CONSTRAINT u_q UNIQUE(ID);
 ```
 
-**Primary Key**
-
-```
-alter table Employee
-add constraint p_k primary key(ID);
+```sql
+ALTER TABLE Employee -- drop the constraint
+DROP CONSTRAINT u_q;
 ```
 
-```
-alter table Employee -- drop the constraint
-drop constraint p_k;
+#### Primary Key
+
+```sql
+ALTER TABLE Employee
+ADD CONSTRAINT p_k PRIMARY KEY(ID);
 ```
 
-**Check**
-
-```
-alter table Employee
-add constraint Age check (age>=30);
+```sql
+ALTER TABLE Employee -- drop the constraint
+DROP CONSTRAINT p_k;
 ```
 
-```
-alter table Employee -- drop the constraint
-drop check Age;
-```
+#### Check
 
-**Default**
-
-```
-alter table Employee
-alter Age set default 10;
+```sql
+ALTER TABLE Employee
+ADD CONSTRAINT Age CHECK (age>=30);
 ```
 
-```
-alter table Employee -- drop the constraint
-alter Age drop default;
-```
-
-### Cloning
-
-**Duplicate a Table Schema**
-
-```
-create table emp_dup like employee;
+```sql
+ALTER TABLE Employee -- drop the constraint
+DROP CHECK Age;
 ```
 
-**Duplicate a Table**
+#### Default
 
+```sql
+ALTER TABLE Employee
+ALTER Age SET DEFAULT 10;
 ```
-create table emp_dup select * from employee;
+
+```sql
+ALTER TABLE Employee -- drop the constraint
+ALTER Age DROP DEFAULT;
 ```
 
-### Access Controls
+## Cloning
 
-**Creating New User**
+#### Duplicate a Table Schema
 
+```sql
+CREATE TABLE emp_dup LIKE employee;
 ```
+
+#### Duplicate a Table
+
+```sql
+CREATE TABLE emp_dup SELECT * FROM employee;
+```
+
+## Access Controls
+
+#### Creating New User
+
+```sql
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 ```
 
-the hostname part is set to `localhost`, so the user will be able to connect to the MySQL server only from the localhost.\
-To grant access from another host, change the hostname part with the remote machine IP.
+the hostname part is set to `localhost`, so the user will be able to connect to the MySQL server only from the localhost.  
+To grant access from another host, change the hostname part with the remote machine IP.  
 
-```
+```sql
 CREATE USER 'username'@'172.8.10.5' IDENTIFIED BY 'user_password';
 ```
 
 To create a user that can connect from any host, '%' is used in the hostname part:
 
-```
+```sql
 CREATE USER 'username'@'%' IDENTIFIED BY 'user_password';
 ```
 
-**Grant All Permissions**
+#### Grant All Permissions
 
-```
+```sql
 GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
 ```
 
-Asterisks(\*) refers to the database and table names respectively.\
+Asterisks(\*) refers to the database and table names respectively.  
 By using asterisks we can give access of all the databases **or** tables to the user.
 
-**Flush Privileges**
+#### Flush Privileges
 
-```
+```sql
 FLUSH PRIVILEGES
 ```
 
 All the changes won't be in effect unless this query is fired.
 
-**Specific User Permissions**
+#### Specific User Permissions
 
-```
+```sql
 GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
 ```
 
@@ -747,36 +737,36 @@ GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
 * **INSERT** - allows them to insert rows into tables.
 * **SELECT** - allows them to use the `SELECT` command to read through databases.
 * **UPDATE** - allow them to update table rows.
-* **GRANT OPTION** - allows them to grant or remove other users’ privileges.\
-  Multiple permissions are given with commas.
+* **GRANT OPTION** - allows them to grant or remove other users’ privileges.  
+Multiple permissions are given with commas.
 
-**Revoking permissions**
+#### Revoking permissions
 
-```
+```sql
 REVOKE type_of_permission ON database_name.table_name FROM 'username'@'localhost';
 ```
 
-**Show User's Current Permissions**
+#### Show User's Current Permissions
 
-```
+```sql
 SHOW GRANTS FOR 'username'@'localhost';
 ```
 
-**Delete a User**
+#### Delete a User
 
-```
+```sql
 DROP USER 'username'@'localhost';
 ```
 
-**Set new password to a user**
+#### Set new password to a user
 
-```
-use mysql;
-update user set authentication_string=PASSWORD("<new2-password>") where User='<user>';
-flush privileges;
+```sql
+USE mysql;
+UPDATE user SET authentication_string=PASSWORD("<new2-password>") WHERE User='<user>';
+FLUSH PRIVILEGES;
 ```
 
-### Reset Root Password
+## Reset Root Password
 
 Stop MySQL service
 
@@ -786,11 +776,12 @@ sudo systemctl stop mysql
 
 Restart MySQL service without loading grant tables
 
-```
+```bash
 sudo mysqld_safe --skip-grant-tables &
 ```
 
-The apersand (&) will cause the program to run in the background and `--skip-grant-tables` enables everyone to to connect to the database server without a password and with all privileges granted. Login to shell
+The apersand (&) will cause the program to run in the background and `--skip-grant-tables` enables everyone to to connect to the database server without a password and with all privileges granted.
+Login to shell
 
 ```
 mysql -u root
@@ -798,7 +789,7 @@ mysql -u root
 
 Set new password for root
 
-```
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'MY_NEW_PASSWORD';
 FLUSH PRIVILEGES;
 ```
@@ -810,70 +801,70 @@ mysqladmin -u root -p shutdown
 sudo systemctl start mysql
 ```
 
-### Programming
+## Programming
 
-**Declare variables**
+#### Declare variables
 
-```
-set @num = 10;
-set @name = 'Anurag';
-```
-
-**Print them**
-
-```
-select @name;
+```sql
+SET @num = 10;
+SET @name = 'Anurag';
 ```
 
-**For loop**
+#### Print them
 
-```
-set @n = 21;
-select repeat("* ", @n := @n - 1) from information_schema.tables where @n > 0;
-```
-
-### Miscellaneous
-
-**Round**
-
-```
-select round(3.141596, 3);
+```sql
+SELECT @name;
 ```
 
-**Repeated concatenation**
+#### For loop
 
-```
-select repeat("* ", 20);
-```
-
-**Random float**
-
-```
-select rand();
+```sql
+SET @n = 21;
+SELECT REPEAT("* ", @n := @n - 1) FROM information_schema.tables WHERE @n > 0;
 ```
 
-**Typecast to Int**
+## Miscellaneous
 
-```
-select cast(23.01245 as signed);
-```
+#### Round
 
-**Concatenation**
-
-```
-select concat("Mahesh", " ", "Chandra", " ", "Duddu", "!");
+```sql
+SELECT ROUND(3.141596, 3);
 ```
 
-**Extract Month**
+#### Repeated concatenation
 
-```
-select month("1998-12-30");
+```sql
+SELECT REPEAT("* ", 20);
 ```
 
-**Extract Year**
+#### Random float
 
+```sql
+SELECT RAND();
 ```
-select year("1998-12-30");
+
+#### Typecast to Int
+
+```sql
+SELECT CAST(23.01245 AS SIGNED);
+```
+
+#### Concatenation
+
+```sql
+SELECT CONCAT("Mahesh", " ", "Chandra", " ", "Duddu", "!");
+```
+
+#### Extract Month
+
+```sql
+SELECT MONTH("1998-12-30");
+```
+
+#### Extract Year
+
+```sql
+SELECT YEAR("1998-12-30");
 ```
 
 ## Also thanks to
